@@ -1,3 +1,1 @@
-var greet = function () {
-  console.log('Bienvenido')
-}
+console.log('Bienvenido')
