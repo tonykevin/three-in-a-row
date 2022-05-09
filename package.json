@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "description": "turn-based game for two people",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "snowpack dev",
+    "build": "snowpack build"
   },
   "author": "Tony kevin",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "snowpack": "^3.8.8"
+  }
 }
