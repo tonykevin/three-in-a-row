@@ -1,1 +1,3 @@
-console.log('Juego: tres en línea')
+var name = function () {
+  console.log("hi");
+};
