@@ -1,3 +1,3 @@
-var name = function () {
-  console.log("hi");
-};
+var greet = function () {
+  console.log('Bienvenido')
+}

@@ -6,12 +6,17 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "snowpack dev",
     "build": "snowpack build",
-    "lint": "eslint src/ --ignore-path .gitignore"
+    "lint": "eslint src/ --ignore-path .gitignore",
+    "format": "prettier --ignore-path .gitignore \"src/**/*.+(js|json|css)\" --write",
+    "validate": "npm run lint && npm run format"
   },
   "author": "Tony kevin",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.6.2",
     "snowpack": "^3.8.8"
   }
 }
