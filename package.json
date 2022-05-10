@@ -14,11 +14,18 @@
   "author": "Tony kevin",
   "license": "ISC",
   "devDependencies": {
+    "@snowpack/plugin-postcss": "^1.4.3",
+    "cssnano": "^5.1.7",
     "eslint": "^8.15.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
+    "postcss": "^8.4.13",
+    "postcss-import": "^14.1.0",
+    "postcss-nested": "^5.0.6",
+    "postcss-nested-ancestors": "^3.0.0",
+    "postcss-preset-env": "^7.5.0",
     "prettier": "^2.6.2",
     "snowpack": "^3.8.8"
   },
