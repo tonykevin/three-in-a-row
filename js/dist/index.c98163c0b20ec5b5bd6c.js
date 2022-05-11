@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk=self.webpackChunk||[]).push([[639],{414:()=>{console.log("Bienvenido")}},e=>{e.O(0,[532],(()=>(414,e(e.s=414)))),e.O()}]);
