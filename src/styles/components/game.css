@@ -1,0 +1,41 @@
+/*------------------------------------*\
+  # GAME
+\*------------------------------------*/
+
+.c-game {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20vh auto;
+  justify-items: center;
+
+  &__area {
+    --box-size: min(calc(100vw - 2rem), 27rem);
+    align-items: center;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    justify-items: center;
+    gap: 1rem;
+    height: var(--box-size);
+    width: var(--box-size);
+  }
+
+  &__text {
+    color: var(--color-game-text);
+    font-size: 2.6rem;
+
+    @media (min-width: 40em) {
+      font-size: 4.6rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.2rem;
+    color: var(--color-game-title);
+    text-decoration: underline;
+
+    @media (min-width: 64em) {
+      font-size: 2.4rem;
+    }
+  }
+}

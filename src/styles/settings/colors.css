@@ -3,6 +3,9 @@
 \* ------------------------------------ */
 
 :root {
-  --color-page-background: #f2f2f2;
+  --color-page-background: #d7cdcc;
   --color-page-text: #292f36;
+
+  --color-game-title: #bd1e1e;
+  --color-game-text: #17255a;
 }
