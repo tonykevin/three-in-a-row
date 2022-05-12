@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Juego por turnos para dos personas" />
-    <title>Juego: tres en línea</title>
+    <meta
+      name="description"
+      content="Michi o de tres en linea, es un juego por turnos para dos personas"
+    />
+    <title>Juego: Michi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -15,16 +18,28 @@
   <body>
     <div class="o-wrapper">
       <section class="c-game">
-        <h1 class="c-game__title">Tres en línea</h1>
+        <h1 class="c-game__title">Juego: Michi</h1>
         <div class="c-game__area">
+          <svg width="100%" height="100%" class="c-game__lines">
+            <defs>
+              <rect id="vLine" width="1.6%" height="100%" rx="0.4em" />
+              <rect id="hLine" width="100%" height="1.6%" rx="0.4em" />
+            </defs>
+            <g fill="var(--color-game-line)">
+              <use x="32.3%" href="#vLine" />
+              <use x="66.3%" href="#vLine" />
+              <use y="32.3%" href="#hLine" />
+              <use y="66.3%" href="#hLine" />
+            </g>
+          </svg>
           <span class="c-game__text">X</span>
-          <span class="c-game__text">0</span>
-          <span class="c-game__text">0</span>
-          <span class="c-game__text">0</span>
           <span class="c-game__text">X</span>
-          <span class="c-game__text">0</span>
-          <span class="c-game__text">0</span>
-          <span class="c-game__text">0</span>
+          <span class="c-game__text c-game__text--1">0</span>
+          <span class="c-game__text c-game__text--1">0</span>
+          <span class="c-game__text">X</span>
+          <span class="c-game__text c-game__text--1">0</span>
+          <span class="c-game__text c-game__text--1">0</span>
+          <span class="c-game__text c-game__text--1">0</span>
           <span class="c-game__text">x</span>
         </div>
       </section>
