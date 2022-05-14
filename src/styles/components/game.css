@@ -6,7 +6,7 @@
   align-items: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 12vh auto 8vh;
+  grid-template-rows: 12vh auto 12vh;
   justify-items: center;
 
   &__area {
@@ -23,7 +23,6 @@
   }
 
   &__controls {
-    border-top: 1px solid rgba(0 0 0 / 0.1);
     display: flex;
     justify-content: center;
     align-items: center;

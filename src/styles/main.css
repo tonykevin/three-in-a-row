@@ -12,3 +12,5 @@
 @import './objects/wrapper.css';
 
 @import './components/game.css';
+
+@import './utilities/line.css';
