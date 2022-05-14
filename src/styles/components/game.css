@@ -6,17 +6,29 @@
   align-items: center;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 20vh auto;
+  grid-template-rows: 12vh auto 8vh;
   justify-items: center;
 
   &__area {
-    --box-size: min(calc(100vw - 2rem), 27rem);
+    --board-size: min(calc(100vw - 3rem), 27rem);
+    --margin-y: 2rem;
     display: grid;
     gap: 2%;
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-    height: var(--box-size);
+    height: var(--board-size);
     position: relative;
-    width: var(--box-size);
+    width: var(--board-size);
+    margin-top: var(--margin-y);
+    margin-bottom: var(--margin-y);
+  }
+
+  &__controls {
+    border-top: 1px solid rgba(0 0 0 / 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: min(100%, 27rem);
+    height: 100%;
   }
 
   &__lines {
@@ -46,7 +58,8 @@
 
   &__title {
     color: var(--color-game-title);
-    font-size: 2.2rem;
+    font-size: 2rem;
+    text-align: center;
     text-decoration: underline;
 
     @media (min-width: 64em) {
