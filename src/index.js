@@ -1,10 +1,5 @@
-import { Mark } from './components'
+import App from './App'
 
 import './index.css'
 
-document.addEventListener('DOMContentLoaded', function () {
-  const tags = document.querySelectorAll('#mark')
-  tags.forEach(function (tag) {
-    new Mark(tag).updateTag()
-  })
-})
+document.addEventListener('DOMContentLoaded', App)
