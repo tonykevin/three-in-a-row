@@ -3,9 +3,14 @@ import { Mark } from './components'
 function App() {
   const elements = document.querySelectorAll('#mark')
   const markList = []
+  const userMarks = []
+
+  const getUserMarks = function (coordinate) {
+    userMarks.push(coordinate)
+  }
 
   elements.forEach(function (element) {
-    let mark = new Mark(element)
+    let mark = new Mark(element, 'x', getUserMarks)
     markList.push(mark)
   })
 
@@ -17,8 +22,7 @@ function App() {
       aux++
     }
   }
-
-  console.log(markList)
+  console.log(userMarks)
 }
 
 export default App

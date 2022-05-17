@@ -1,20 +1,19 @@
-function Mark(tag = {}, coordinate = { x: 0, y: 0 }, symbol = '') {
-  this.tag = tag
-  this.coordinate = coordinate
+function Mark(element = {}, symbol = '', getUserMarks) {
+  this.element = element
+  this.coordinate = {
+    x: 0,
+    y: 0,
+  }
   this.symbol = symbol
 
-  this.addSymbol = function () {
-    this.symbol = 'X'
-    this.updateTag()
-  }
-
-  this.updateTag = function () {
-    if (!this.tag.innerText) {
-      this.tag.innerText = this.symbol
+  this.updateElement = function () {
+    if (!this.element.innerText) {
+      this.element.innerText = this.symbol
+      getUserMarks(this.coordinate)
     }
-  }
+  }.bind(this)
 
-  this.tag.addEventListener('click', this.addSymbol.bind(this))
+  this.element.addEventListener('click', this.updateElement)
 }
 
 export default Mark
