@@ -3,14 +3,10 @@ import { Mark } from './components'
 function App() {
   const elements = document.querySelectorAll('#mark')
   const markList = []
-  const userMarks = []
 
-  const getUserMarks = function (coordinate) {
-    userMarks.push(coordinate)
-  }
-
+  // Initialize the game
   elements.forEach(function (element) {
-    let mark = new Mark(element, 'x', getUserMarks)
+    let mark = new Mark({ element })
     markList.push(mark)
   })
 
@@ -22,7 +18,12 @@ function App() {
       aux++
     }
   }
-  console.log(userMarks)
+
+  //Add marks to the game
+  markList.forEach(function (mark) {
+    mark.element.addEventListener('click', mark.updateSymbol)
+  })
+  console.log(markList)
 }
 
 export default App

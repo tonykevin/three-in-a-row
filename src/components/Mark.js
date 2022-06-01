@@ -1,4 +1,4 @@
-function Mark(element = {}, symbol = '', getUserMarks) {
+function Mark({ element = {}, symbol = '' } = {}) {
   this.element = element
   this.coordinate = {
     x: 0,
@@ -6,14 +6,12 @@ function Mark(element = {}, symbol = '', getUserMarks) {
   }
   this.symbol = symbol
 
-  this.updateElement = function () {
+  this.updateSymbol = function () {
     if (!this.element.innerText) {
-      this.element.innerText = this.symbol
-      getUserMarks(this.coordinate)
+      this.element.innerText = 'X'
     }
+    return this.element.innerText
   }.bind(this)
-
-  this.element.addEventListener('click', this.updateElement)
 }
 
 export default Mark
