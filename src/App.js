@@ -4,9 +4,13 @@ function App() {
   const elements = document.querySelectorAll('#mark')
   const markList = []
 
+  const captureCoordinate = function (coordinate) {
+    console.log(coordinate)
+  }
+
   // Initialize the game
   elements.forEach(function (element) {
-    let mark = new Mark({ element })
+    let mark = new Mark({ element, captureCoordinate })
     markList.push(mark)
   })
 
@@ -20,10 +24,6 @@ function App() {
   }
 
   //Add marks to the game
-  markList.forEach(function (mark) {
-    mark.element.addEventListener('click', mark.updateSymbol)
-  })
-  console.log(markList)
 }
 
 export default App
