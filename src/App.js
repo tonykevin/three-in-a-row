@@ -3,6 +3,14 @@ import { Mark } from './components'
 function App() {
   const elements = document.querySelectorAll('#mark')
   const markList = []
+  let currentMark = ''
+
+  const toggleMark = function () {
+    if (!currentMark || currentMark === 'O') {
+      return (currentMark = 'X')
+    }
+    return (currentMark = 'O')
+  }
 
   const captureCoordinate = function (coordinate) {
     console.log(coordinate)
@@ -10,7 +18,7 @@ function App() {
 
   // Initialize the game
   elements.forEach(function (element) {
-    let mark = new Mark({ element, captureCoordinate })
+    let mark = new Mark({ element, captureCoordinate, toggleMark })
     markList.push(mark)
   })
 

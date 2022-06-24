@@ -1,4 +1,4 @@
-function Mark({ element, captureCoordinate } = {}) {
+function Mark({ element, captureCoordinate, toggleMark } = {}) {
   this.element = element
   this.coordinate = {
     x: 0,
@@ -7,7 +7,7 @@ function Mark({ element, captureCoordinate } = {}) {
 
   this.updateMark = function () {
     if (!this.element.innerText) {
-      this.element.innerText = 'X'
+      this.element.innerText = toggleMark()
       captureCoordinate(this.coordinate)
     }
   }.bind(this)
