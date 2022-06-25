@@ -5,6 +5,12 @@ function Mark({ element, captureCoordinate, setMarkColor, toggleMark } = {}) {
     y: 0,
   }
 
+  this.removeMark = function () {
+    if (this.element.innerText) {
+      this.element.innerText = ''
+    }
+  }
+
   this.updateMark = function () {
     if (!this.element.innerText) {
       const currentMark = toggleMark()

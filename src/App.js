@@ -2,8 +2,8 @@ import { Mark } from './components'
 
 function App() {
   const elements = document.querySelectorAll('#mark')
-  const markList = []
   const styles = getComputedStyle(document.documentElement)
+  const markList = []
   let currentMark = ''
 
   const setMarkColor = function (currentMark) {
@@ -23,27 +23,28 @@ function App() {
     console.log(coordinate)
   }
 
-  // Initialize the game
-  elements.forEach(function (element) {
-    let mark = new Mark({
-      element,
-      captureCoordinate,
-      setMarkColor,
-      toggleMark,
+  const initializeGame = function () {
+    elements.forEach(function (element) {
+      let mark = new Mark({
+        element,
+        captureCoordinate,
+        setMarkColor,
+        toggleMark,
+      })
+      markList.push(mark)
     })
-    markList.push(mark)
-  })
 
-  let aux = 0
-  for (let i = 1; i <= 3; i++) {
-    for (let j = 1; j <= 3; j++) {
-      markList[aux].coordinate.x = j
-      markList[aux].coordinate.y = i
-      aux++
+    let aux = 0
+    for (let i = 1; i <= 3; i++) {
+      for (let j = 1; j <= 3; j++) {
+        markList[aux].coordinate.x = j
+        markList[aux].coordinate.y = i
+        aux++
+      }
     }
   }
 
-  //Add marks to the game
+  initializeGame()
 }
 
 export default App
