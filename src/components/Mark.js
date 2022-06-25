@@ -1,20 +1,14 @@
-function Mark({ element, captureCoordinate, toggleMark } = {}) {
+function Mark({ element, captureCoordinate, setMarkColor, toggleMark } = {}) {
   this.element = element
   this.coordinate = {
     x: 0,
     y: 0,
   }
 
-  this.setMarkColor = function (currentMark) {
-    if (currentMark !== 'X') {
-      return '#55b740'
-    }
-  }
-
   this.updateMark = function () {
     if (!this.element.innerText) {
       const currentMark = toggleMark()
-      const markColor = this.setMarkColor(currentMark)
+      const markColor = setMarkColor(currentMark)
 
       if (markColor) {
         this.element.style.setProperty('--color-game-mark', markColor)

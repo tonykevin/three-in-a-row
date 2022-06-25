@@ -3,7 +3,14 @@ import { Mark } from './components'
 function App() {
   const elements = document.querySelectorAll('#mark')
   const markList = []
+  const styles = getComputedStyle(document.documentElement)
   let currentMark = ''
+
+  const setMarkColor = function (currentMark) {
+    if (currentMark !== 'X') {
+      return styles.getPropertyValue('--color-game-mark1')
+    }
+  }
 
   const toggleMark = function () {
     if (!currentMark || currentMark === 'O') {
@@ -18,7 +25,12 @@ function App() {
 
   // Initialize the game
   elements.forEach(function (element) {
-    let mark = new Mark({ element, captureCoordinate, toggleMark })
+    let mark = new Mark({
+      element,
+      captureCoordinate,
+      setMarkColor,
+      toggleMark,
+    })
     markList.push(mark)
   })
 
