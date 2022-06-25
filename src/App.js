@@ -6,16 +6,15 @@ function App() {
   const markList = []
   let currentMark = ''
 
-  const setMarkColor = function (currentMark) {
-    if (currentMark !== 'X') {
-      return styles.getPropertyValue('--color-game-mark1')
-    }
+  const getAlternativeColor = function () {
+    return styles.getPropertyValue('--color-game-mark1')
   }
 
-  const toggleMark = function () {
+  const toggleMark = function (element) {
     if (!currentMark || currentMark === 'O') {
       return (currentMark = 'X')
     }
+    element.style.setProperty('--color-game-mark', getAlternativeColor())
     return (currentMark = 'O')
   }
 
@@ -28,7 +27,6 @@ function App() {
       let mark = new Mark({
         element,
         captureCoordinate,
-        setMarkColor,
         toggleMark,
       })
       markList.push(mark)

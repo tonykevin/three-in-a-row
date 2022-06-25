@@ -1,4 +1,4 @@
-function Mark({ element, captureCoordinate, setMarkColor, toggleMark } = {}) {
+function Mark({ element, captureCoordinate, toggleMark } = {}) {
   this.element = element
   this.coordinate = {
     x: 0,
@@ -13,20 +13,13 @@ function Mark({ element, captureCoordinate, setMarkColor, toggleMark } = {}) {
 
   this.updateMark = function () {
     if (!this.element.innerText) {
-      const currentMark = toggleMark()
-      const markColor = setMarkColor(currentMark)
-
-      if (markColor) {
-        this.element.style.setProperty('--color-game-mark', markColor)
-      }
-
+      const currentMark = toggleMark(this.element)
       this.element.innerText = currentMark
-
       captureCoordinate(this.coordinate)
     }
   }.bind(this)
 
   this.element.addEventListener('click', this.updateMark)
 }
-1
+
 export default Mark
