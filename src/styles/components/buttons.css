@@ -1,0 +1,13 @@
+/*------------------------------------*\
+  # BUTTONS
+\*------------------------------------*/
+
+.c-btn {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  justify-content: center;
+  margin: 0;
+  padding: 0.3rem 0.6rem;
+}
