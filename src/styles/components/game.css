@@ -10,7 +10,7 @@
   justify-items: center;
 
   &__area {
-    --board-size: min(calc(100vw - 3rem), 27rem);
+    --board-size: min(calc(100vw - 3rem), 64vh);
     --margin-y: 2rem;
     display: grid;
     gap: 2%;
