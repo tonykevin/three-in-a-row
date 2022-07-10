@@ -4,10 +4,30 @@
 
 .c-btn {
   align-items: center;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-bottom-color: #1eae4e;
+  border-right-color: #1eae4e;
+  border-radius: 0.3rem;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
   justify-content: center;
   margin: 0;
-  padding: 0.3rem 0.6rem;
+  padding: 0.4rem 0.5rem;
+  transition: all 0.5s easy-in 0.3s;
+
+  &:active {
+    border: none;
+    transform: scale(0.95);
+  }
+}
+
+.c-btn--primary {
+  background: var(--color-button);
+  color: #96edb3;
+
+  &:active {
+    background: #3fde74;
+  }
 }

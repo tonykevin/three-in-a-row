@@ -3,6 +3,9 @@
 \* ------------------------------------ */
 
 :root {
+  --color-brand-primary: #034078;
+  --color-brand-secondary: #20bf55;
+
   --color-page-background: #d7cdcc;
   --color-page-text: #292f36;
 
@@ -10,6 +13,7 @@
   --color-game-mark: #754668;
   --color-game-mark1: #55b740;
   --color-game-line: #17255a;
+  --color-button: var(--color-brand-secondary);
 
   --color-u-line: rgba(0 0 0 / 0.1);
 }
