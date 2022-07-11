@@ -7,6 +7,7 @@
 @import './generic/box-sizing.css';
 @import './generic/reset.css';
 
+@import './elements/links.css';
 @import './elements/page.css';
 
 @import './objects/wrapper.css';
