@@ -19,7 +19,7 @@ function App() {
   }
 
   const captureCoordinate = function (coordinate) {
-    console.log(coordinate)
+    return coordinate
   }
 
   const initializeGame = function () {
@@ -41,6 +41,21 @@ function App() {
       }
     }
   }
+
+  const removeMarks = function (marks) {
+    marks.forEach(function (element) {
+      element.removeMark()
+    })
+  }
+
+  const handleResetButton = function (e) {
+    e.preventDefault()
+    currentMark = ''
+    removeMarks(markList)
+  }
+
+  const resetButton = document.getElementById('resetButton')
+  resetButton.addEventListener('click', handleResetButton)
 
   initializeGame()
 }
