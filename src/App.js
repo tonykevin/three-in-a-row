@@ -1,4 +1,5 @@
 import { Mark } from './components'
+import { solveGame } from './utils'
 
 function App() {
   const elements = document.querySelectorAll('#mark')
@@ -28,8 +29,9 @@ function App() {
     return (currentMark = 'O')
   }
 
-  const captureMark = function (mark) {
-    return mark
+  const captureMark = function ({ coordinate, symbol }) {
+    const markData = { coordinate, symbol }
+    wathGame(markData)
   }
 
   const initializeGame = function () {
@@ -68,6 +70,10 @@ function App() {
 
   const resetButton = document.getElementById('resetButton')
   resetButton.addEventListener('click', handleResetButton)
+
+  const wathGame = function (markData) {
+    solveGame({ markData, clickNumbers })
+  }
 
   initializeGame()
 }

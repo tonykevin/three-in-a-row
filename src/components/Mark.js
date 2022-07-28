@@ -4,6 +4,7 @@ function Mark({ element, captureMark, getClickNumbers, toggleMark } = {}) {
     x: 0,
     y: 0,
   }
+  this.symbol = ''
 
   this.removeMark = function () {
     if (this.element.innerText) {
@@ -14,9 +15,9 @@ function Mark({ element, captureMark, getClickNumbers, toggleMark } = {}) {
   this.updateMark = function () {
     getClickNumbers()
     if (!this.element.innerText) {
-      const currentMark = toggleMark(this.element)
-      this.element.innerText = currentMark
-      captureMark({ coordinate: this.coordinate, symbol: currentMark })
+      this.symbol = toggleMark(this.element)
+      this.element.innerText = this.symbol
+      captureMark(this)
     }
   }.bind(this)
 
