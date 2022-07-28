@@ -5,6 +5,11 @@ function App() {
   const elements = document.querySelectorAll('#mark')
   const styles = getComputedStyle(document.documentElement)
   const markList = []
+  let playerMarks = {
+    first: [],
+    second: [],
+  }
+
   let currentMark = ''
   let clickNumbers = 0
 
@@ -65,6 +70,10 @@ function App() {
     e.preventDefault()
     currentMark = ''
     clickNumbers = 0
+    playerMarks = {
+      first: [],
+      second: [],
+    }
     removeMarks(markList)
   }
 
@@ -72,7 +81,8 @@ function App() {
   resetButton.addEventListener('click', handleResetButton)
 
   const wathGame = function (markData) {
-    solveGame({ markData, clickNumbers })
+    solveGame({ clickNumbers, markData, playerMarks })
+    console.log(playerMarks.first)
   }
 
   initializeGame()

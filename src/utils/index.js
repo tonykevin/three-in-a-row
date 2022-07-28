@@ -1,3 +1,3 @@
-import { solveGame } from './solveGame'
+import solveGame from './solveGame'
 
 export { solveGame }
