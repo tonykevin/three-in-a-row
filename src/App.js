@@ -28,15 +28,15 @@ function App() {
     return (currentMark = 'O')
   }
 
-  const captureCoordinate = function (coordinate) {
-    return coordinate
+  const captureMark = function (mark) {
+    return mark
   }
 
   const initializeGame = function () {
     elements.forEach(function (element) {
       const mark = new Mark({
         element,
-        captureCoordinate,
+        captureMark,
         getClickNumbers,
         toggleMark,
       })

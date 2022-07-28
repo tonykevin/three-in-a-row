@@ -1,9 +1,4 @@
-function Mark({
-  element,
-  captureCoordinate,
-  getClickNumbers,
-  toggleMark,
-} = {}) {
+function Mark({ element, captureMark, getClickNumbers, toggleMark } = {}) {
   this.element = element
   this.coordinate = {
     x: 0,
@@ -21,7 +16,7 @@ function Mark({
     if (!this.element.innerText) {
       const currentMark = toggleMark(this.element)
       this.element.innerText = currentMark
-      captureCoordinate(this.coordinate)
+      captureMark({ coordinate: this.coordinate, symbol: currentMark })
     }
   }.bind(this)
 
