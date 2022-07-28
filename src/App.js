@@ -6,15 +6,22 @@ function App() {
   const markList = []
   let currentMark = ''
 
-  const getAlternativeColor = function () {
-    return styles.getPropertyValue('--color-game-mark1')
+  const getColor = function (color) {
+    return styles.getPropertyValue(color)
   }
 
   const toggleMark = function (element) {
     if (!currentMark || currentMark === 'O') {
+      element.style.setProperty(
+        '--color-game-mark',
+        getColor('--color-game-mark')
+      )
       return (currentMark = 'X')
     }
-    element.style.setProperty('--color-game-mark', getAlternativeColor())
+    element.style.setProperty(
+      '--color-game-mark',
+      getColor('--color-game-mark1')
+    )
     return (currentMark = 'O')
   }
 
@@ -24,7 +31,7 @@ function App() {
 
   const initializeGame = function () {
     elements.forEach(function (element) {
-      let mark = new Mark({
+      const mark = new Mark({
         element,
         captureCoordinate,
         toggleMark,
