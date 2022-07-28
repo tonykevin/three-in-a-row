@@ -5,6 +5,7 @@ function App() {
   const styles = getComputedStyle(document.documentElement)
   const markList = []
   let currentMark = ''
+  let clickNumbers = 0
 
   const getColor = function (color) {
     return styles.getPropertyValue(color)
@@ -12,6 +13,10 @@ function App() {
 
   const toggleColor = function (element, color) {
     element.style.setProperty('--color-game-mark', getColor(color))
+  }
+
+  const getClickNumbers = function () {
+    return clickNumbers++
   }
 
   const toggleMark = function (element) {
@@ -32,6 +37,7 @@ function App() {
       const mark = new Mark({
         element,
         captureCoordinate,
+        getClickNumbers,
         toggleMark,
       })
       markList.push(mark)
@@ -56,6 +62,7 @@ function App() {
   const handleResetButton = function (e) {
     e.preventDefault()
     currentMark = ''
+    clickNumbers = 0
     removeMarks(markList)
   }
 
