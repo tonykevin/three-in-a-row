@@ -10,18 +10,16 @@ function App() {
     return styles.getPropertyValue(color)
   }
 
+  const toggleColor = function (element, color) {
+    element.style.setProperty('--color-game-mark', getColor(color))
+  }
+
   const toggleMark = function (element) {
     if (!currentMark || currentMark === 'O') {
-      element.style.setProperty(
-        '--color-game-mark',
-        getColor('--color-game-mark')
-      )
+      toggleColor(element, '--color-game-mark')
       return (currentMark = 'X')
     }
-    element.style.setProperty(
-      '--color-game-mark',
-      getColor('--color-game-mark1')
-    )
+    toggleColor(element, '--color-game-mark1')
     return (currentMark = 'O')
   }
 
