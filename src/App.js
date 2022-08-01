@@ -35,8 +35,8 @@ function App() {
   }
 
   const captureMark = function ({ coordinate, symbol }) {
-    const markData = { coordinate, symbol }
-    wathGame(markData)
+    const currentMark = { coordinate, symbol }
+    wathGame(currentMark)
   }
 
   const initializeGame = function () {
@@ -80,9 +80,8 @@ function App() {
   const resetButton = document.getElementById('resetButton')
   resetButton.addEventListener('click', handleResetButton)
 
-  const wathGame = function (markData) {
-    solveGame({ clickNumbers, markData, playerMarks })
-    console.log(playerMarks.first)
+  const wathGame = function (currentMark) {
+    solveGame({ clickNumbers, currentMark, playerMarks })
   }
 
   initializeGame()

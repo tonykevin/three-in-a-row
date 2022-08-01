@@ -1,16 +1,16 @@
-import { locateCoordinate } from './locateCoordinate'
+import { isVerticalList } from './utils'
 
-function solveGame({ clickNumbers, markData, playerMarks }) {
-  const isFirstClick = clickNumbers === 1
-  if (isFirstClick) {
-    if (markData.symbol === 'X') {
-      playerMarks.first.push(markData)
-    }
+function solveGame({ currentMark, playerMarks }) {
+  const listName = currentMark.symbol === 'X' ? 'first' : 'second'
+  const currentList = playerMarks[listName]
 
-    playerMarks.second.push(markData)
+  currentList.push(currentMark)
+
+  const hasThreeCoords = currentList.length === 3
+
+  if (hasThreeCoords) {
+    console.log(isVerticalList(currentList))
   }
-
-  console.log(locateCoordinate(markData.coordinate))
 }
 
 export default solveGame
