@@ -21,12 +21,38 @@ export function isVerticalList(list) {
   let response = true
 
   list.forEach(({ coordinate }, index) => {
-    console.log(index, firstCoord, coordinate)
     if (!index) {
       firstCoord = coordinate
     } else {
       matches.push(firstCoord.x === coordinate.x)
     }
+    console.log(index, firstCoord, coordinate)
+  })
+
+  while (i < matches.length) {
+    response = response && matches[i]
+    if (!response) {
+      break
+    }
+    i++
+  }
+
+  return response
+}
+
+export function isHorizontalList(list) {
+  let firstCoord = {}
+  const matches = []
+  let i = 0
+  let response = true
+
+  list.forEach(({ coordinate }, index) => {
+    if (!index) {
+      firstCoord = coordinate
+    } else {
+      matches.push(firstCoord.y === coordinate.y)
+    }
+    console.log(index, firstCoord, coordinate)
   })
 
   while (i < matches.length) {
