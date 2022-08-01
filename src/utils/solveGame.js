@@ -1,4 +1,4 @@
-import { isVerticalList, isHorizontalList } from './utils'
+import { isDiagonalList } from './utils'
 
 function solveGame({ currentMark, playerMarks }) {
   const listName = currentMark.symbol === 'X' ? 'first' : 'second'
@@ -9,8 +9,9 @@ function solveGame({ currentMark, playerMarks }) {
   const hasThreeCoords = currentList.length === 3
 
   if (hasThreeCoords) {
-    console.log(isVerticalList(currentList))
-    console.log(isHorizontalList(currentList))
+    // console.log(isVerticalList(currentList))
+    // console.log(isHorizontalList(currentList))
+    console.log(isDiagonalList(currentList))
   }
 }
 

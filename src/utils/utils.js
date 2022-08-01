@@ -65,3 +65,34 @@ export function isHorizontalList(list) {
 
   return response
 }
+
+export function isDiagonalList(list) {
+  let i = 0
+  let response = false
+  const centerCoord = Math.round(list.length / 2)
+
+  while (i < list.length) {
+    if (
+      list[i].coordinate.x === centerCoord &&
+      list[i].coordinate.y === centerCoord
+    ) {
+      response = true
+      i = 0
+      break
+    }
+    i++
+  }
+
+  if (!response) {
+    return response
+  }
+
+  for (const { coordinate } of list) {
+    if (coordinate.x !== coordinate.y) {
+      response = false
+      break
+    }
+  }
+
+  return response
+}
