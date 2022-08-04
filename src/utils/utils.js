@@ -15,18 +15,17 @@ export function locateCoordinate(coordinate) {
 }
 
 export function isVerticalList(list) {
-  let firstCoord = {}
+  let firstCoordX = 0
   const matches = []
   let i = 0
   let response = true
 
-  list.forEach(({ coordinate }, index) => {
+  list.forEach(({ x }, index) => {
     if (!index) {
-      firstCoord = coordinate
+      firstCoordX = x
     } else {
-      matches.push(firstCoord.x === coordinate.x)
+      matches.push(firstCoordX === x)
     }
-    console.log(index, firstCoord, coordinate)
   })
 
   while (i < matches.length) {
@@ -41,18 +40,17 @@ export function isVerticalList(list) {
 }
 
 export function isHorizontalList(list) {
-  let firstCoord = {}
+  let firstCoordY = 0
   const matches = []
   let i = 0
   let response = true
 
-  list.forEach(({ coordinate }, index) => {
+  list.forEach(({ y }, index) => {
     if (!index) {
-      firstCoord = coordinate
+      firstCoordY = y
     } else {
-      matches.push(firstCoord.y === coordinate.y)
+      matches.push(firstCoordY === y)
     }
-    console.log(index, firstCoord, coordinate)
   })
 
   while (i < matches.length) {
@@ -67,32 +65,45 @@ export function isHorizontalList(list) {
 }
 
 export function isDiagonalList(list) {
-  let i = 0
   let response = false
+
   const centerCoord = Math.round(list.length / 2)
 
-  while (i < list.length) {
-    if (
-      list[i].coordinate.x === centerCoord &&
-      list[i].coordinate.y === centerCoord
-    ) {
+  sortCoordinateList(list)
+
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].x === centerCoord && list[i].y === centerCoord) {
       response = true
-      i = 0
       break
     }
-    i++
   }
 
   if (!response) {
     return response
   }
 
-  for (const { coordinate } of list) {
-    if (coordinate.x !== coordinate.y) {
+  for (const { x, y } of list) {
+    if (x !== y) {
       response = false
       break
     }
   }
 
   return response
+}
+
+export function sortCoordinateList(list, coord = 'x') {
+  let aux = 0
+  let j = 0
+  for (let i = 0; i < list.length; i++) {
+    aux = list[i]
+    j = i - 1
+    while (j >= 0 && aux[coord] < list[j][coord]) {
+      list[j + 1] = list[j]
+      j--
+    }
+    list[j + 1] = aux
+  }
+
+  return list
 }

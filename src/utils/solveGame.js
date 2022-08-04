@@ -2,16 +2,16 @@ import { isDiagonalList } from './utils'
 
 function solveGame({ currentMark, playerMarks }) {
   const listName = currentMark.symbol === 'X' ? 'first' : 'second'
-  const currentList = playerMarks[listName]
+  const coordinateList = playerMarks[listName]
 
-  currentList.push(currentMark)
+  coordinateList.push(currentMark.coordinate)
 
-  const hasThreeCoords = currentList.length === 3
+  const hasThreeCoords = coordinateList.length === 3
 
   if (hasThreeCoords) {
-    // console.log(isVerticalList(currentList))
-    // console.log(isHorizontalList(currentList))
-    console.log(isDiagonalList(currentList))
+    // console.log(isVerticalList(coordinateList))
+    // console.log(isHorizontalList(coordinateList))
+    console.log(isDiagonalList(coordinateList))
   }
 }
 
