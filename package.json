@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "turn-based game for two people",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "snowpack dev",
     "build": "snowpack build && rm -rf build/dist",
     "lint": "eslint src --ignore-path .gitignore",
@@ -23,6 +23,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
+    "jest": "29.0.1",
     "lint-staged": "^12.4.1",
     "postcss": "^8.4.13",
     "postcss-import": "^14.1.0",
