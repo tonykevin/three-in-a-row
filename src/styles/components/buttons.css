@@ -15,7 +15,7 @@
   justify-content: center;
   margin: 0;
   padding: 0.4rem 0.5rem;
-  transition: all 0.5s easy-in 0.3s;
+  transition: all 0.5s;
 
   &:active {
     border: none;
