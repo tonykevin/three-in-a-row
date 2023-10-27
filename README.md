@@ -1,1 +1,1 @@
-# Three in a row
+# Three in a row, is a project for learning Javascript.
